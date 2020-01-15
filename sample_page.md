@@ -179,7 +179,7 @@ OthrEDU      2449
 Name: edu, dtype: int64
 ```
 
-### 6. Grouping the "Occupation" 
+### 6. Grouping the "Occupation" into Job Categories
 
 There were 15 unique entries in the occupation column.
 ```
@@ -218,13 +218,13 @@ Name: occu, dtype: int64
 
 ### 7. Processing "Hours-per-week" Column
 
-Checking for *Outliers* in the "Hours-per-week" Column.
+Checking for **Outliers** in the "Hours-per-week" Column.
 ```
 plt.boxplot(adt['hrsprwk'])
 ```
 <img src="images/hrsprwk_outliers.png?raw=true"/>
 
-Treating the *Outliers*
+Treating the **Outliers**
 
 ```
 p25=adt['hrsprwk'].quantile(.25)
@@ -241,7 +241,7 @@ adt['hrsprwk'][adt['hrsprwk']>upperrange]=np.nan
 adt['hrsprwk'].isnull().sum()
 adt['hrsprwk'].fillna(0,inplace=True)
 ```
-After treating the *Outliers*.
+After treating the **Outliers**.
 ```
 plt.boxplot(adt['hrsprwk'])
 ```
@@ -265,14 +265,14 @@ o=pd.get_dummies(adt['jobCategory'])
 adt=pd.concat([adt,o],axis=1)
 ```
 
-Columns list #before# getting dummies
+Columns list **before** getting dummies
 ```
 adt.columns
 
 Index(['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital', 'occupation', 'relationship', 'race', 'sex', 'capgain', 'caploss', 'hrsprwk', 'country', 'income'], dtype='object')
 ```
 
-Columns list #after# getting dummies
+Columns list **after** getting dummies
 ```
 adt.columns
 
