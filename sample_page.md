@@ -4,6 +4,11 @@
 
 The "Adult Dataset has around 32,000 records with various information like age, education, marital-status, occupation, gender, hours per week, country and income information". From this dataset I have derived various insights and explained them below.
 
+<button class="tablink" onclick="openPage('Home', this, 'red')" id="defaultOpen">Exploratory Data Analysis</button>
+<button class="tablink" onclick="openPage('News', this, 'green')">Data Insights</button>
+<button class="tablink" onclick="openPage('Contact', this, 'blue')">Logistic Regression ML</button>
+
+<div id="Home" class="tabcontent">
 ### 1. Dataset Overview
 
 ```
@@ -137,7 +142,7 @@ Europe       633
 Others       583
 Name: region, dtype: int64
 ```
-
+</div>
 
 
 
