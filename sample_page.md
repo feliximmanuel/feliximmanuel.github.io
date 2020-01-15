@@ -4,57 +4,7 @@
 
 The "Adult Dataset has around 32,000 records with various information like age, education, marital-status, occupation, gender, hours per week, country and income information". From this dataset I have derived various insights and explained them below.
 
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {box-sizing: border-box}
 
-/* Set height of body and the document to 100% */
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: Arial;
-}
-
-/* Style tab links */
-.tablink {
-  background-color: #555;
-  color: white;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-  width: 25%;
-}
-
-.tablink:hover {
-  background-color: #777;
-}
-
-/* Style the tab content (and add height:100% for full page content) */
-.tabcontent {
-  color: white;
-  display: none;
-  padding: 100px 20px;
-  height: 100%;
-}
-
-#Home {background-color: red;}
-#News {background-color: green;}
-#Contact {background-color: blue;}
-#About {background-color: orange;}
-</style>
-</head>
-<body>
-
-<button class="tablink" onclick="openPage('Home', this, 'red')" id="defaultOpen">Exploratory Data Analysis</button>
-<button class="tablink" onclick="openPage('News', this, 'green')">Data Insights</button>
-<button class="tablink" onclick="openPage('Contact', this, 'blue')">Logistic Regression ML</button>
-
-<div id="Home" class="tabcontent">
 ### 1. Dataset Overview
 
 ```
@@ -108,7 +58,7 @@ Corrected Column Values:
 Index(['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital', 'occupation', 'relationship', 'race', 'sex', 'capgain', 'caploss', 'hrsprwk', 'country', 'income'], dtype='object')
 
 
-### 4. Grouping the Countries into Region
+### 4. Grouping the "Countries" into Region
 
 There were around 42 unique entries in the country column and around 583 entries where unknow.
 
@@ -177,7 +127,6 @@ adt['region'][adt['country'].isin(['Germany','England','Italy','Dominican-Republ
 adt['region'][adt['country'].isin(['?',])]='Others'
 
 ```
-
 Region Overview
 ```
 adt['region'].value_counts()
@@ -188,11 +137,37 @@ Europe       633
 Others       583
 Name: region, dtype: int64
 ```
-</div>
 
+### 5. Processing "Hours-per-week" Column
 
+Checking for *Outliers* in the "Hours-per-week" Column.
+```
+plt.boxplot(adt['hrsprwk'])
+```
+<img src="images/hrsprwk_outliers.png?raw=true"/>
 
+Treating the *Outliers*
 
+```
+p25=adt['hrsprwk'].quantile(.25)
+p75=adt['hrsprwk'].quantile(.75)
+
+iqr=p75-p25
+
+lowerrange=p25-(1.5*iqr)
+upperrange=p75+(1.5*iqr)
+
+adt['hrsprwk'][adt['hrsprwk']<lowerrange]=np.nan
+adt['hrsprwk'][adt['hrsprwk']>upperrange]=np.nan
+
+adt['hrsprwk'].isnull().sum()
+adt['hrsprwk'].fillna(0,inplace=True)
+```
+After treating the *Outliers*.
+```
+plt.boxplot(adt['hrsprwk'])
+```
+<img src="images/hrsprwk_outliers_treated.png?raw=true"/>
 
 
 
