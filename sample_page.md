@@ -57,7 +57,7 @@ Corrected Column Values:
 Index(['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital', 'occupation', 'relationship', 'race', 'sex', 'capgain', 'caploss', 'hrsprwk', 'country', 'income'], dtype='object')
 
 
-### 4. Grouping the countries into Region
+### 4. Grouping the Countries into Region
 
 There were around 42 unique entries in the country column and around 583 entries where unknow.
 
@@ -113,7 +113,7 @@ Grouping all the countries into 4 regions (America, Asia, Europe, Others).
 
 Creating a new column 
 ```
-adt['region']='asia'
+adt['region']='Asia'
 ```
 Grouping the countries
 ```
@@ -132,7 +132,7 @@ Region Overview
 adt['region'].value_counts()
 
 America    30475
-asia         870
+Asia         870
 Europe       633
 Others       583
 Name: region, dtype: int64
