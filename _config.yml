@@ -4,10 +4,9 @@ description: > # your text below (remove <br> elements if you don't need line br
   <p align=”justify”>
   A quick learning engineer with result-driven "get it done" attitude and with excellent logical & reasoning skills. Passionate about analyzing business requirements and data analysis.  
   </p>
-  <br><br>
   Also good in analyzing and gathering user stories and converting them into a technical requirement. Has a sound knowledge of Agile and Scrum.
   <br><br>
-  <a href="https://www.linkedin.com/in/feliximmanuel/">View My LinkedIn Profile</a> 
+  <a href="##https://www.linkedin.com/in/feliximmanuel/">View My LinkedIn Profile</a> 
   
 theme: jekyll-theme-minimal
 google_analytics: UA-000000-0 # your Google Analytics tracking ID here
