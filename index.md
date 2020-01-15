@@ -10,19 +10,9 @@ To analyze the adult data set, which has various parameters such as "Marital Sta
 
 
 ---
-[Project 2 Title](/pdf/sample_presentation.pdf)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+[Titanic Kaagle Data Analysis]()
+<img src="images/titanic_cover.jpeg.jpg?raw=true"/>
 
 ---
-[Project 3 Title](http://example.com/)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
-
----
-
----
-
-
-
-
----
-
+[Sentiment Analysis & Text Classification using NLTK]()
+<img src="images/word_Cloud.jpg?raw=true"/>
