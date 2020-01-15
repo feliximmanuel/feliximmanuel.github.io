@@ -60,7 +60,7 @@ Index(['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital', 'o
 
 ### 4. Grouping the "Countries" into Region
 
-There were around 42 unique entries in the country column and around 583 entries where unknow.
+There were 42 unique entries in the country column and around 583 entries where unknow.
 
 ```
 adt['country'].value_counts()
@@ -138,7 +138,48 @@ Others       583
 Name: region, dtype: int64
 ```
 
-### 5. Processing "Hours-per-week" Column
+### 5. Grouping the Education
+
+There were 16 unique entries in the education column.
+```
+adt['education'].value_counts()
+
+HS-grad         10501
+Some-college     7291
+Bachelors        5355
+Masters          1723
+Assoc-voc        1382
+11th             1175
+Assoc-acdm       1067
+10th              933
+7th-8th           646
+Prof-school       576
+9th               514
+12th              433
+Doctorate         413
+5th-6th           333
+1st-4th           168
+Preschool          51
+Name: education, dtype: int64
+```
+Grouping all the education into 3 categories (School, Graduate, Other Education)
+```
+adt['edu_category']='School'
+adt['edu_category'][adt['education'].isin(['HS-grad','Some-college','Bachelors','Masters','Doctorate'])]='Graduate'
+adt['edu_category'][adt['education'].isin(['Assoc-voc','Assoc-acdm'])]='OthrEDU'
+```
+
+Education Category Overview
+```
+adt['edu'].value_counts() 
+Graduate    25283
+School       4829
+OthrEDU      2449
+Name: edu, dtype: int64
+```
+
+
+### 6. Processing "Hours-per-week" Column
 
 Checking for *Outliers* in the "Hours-per-week" Column.
 ```
