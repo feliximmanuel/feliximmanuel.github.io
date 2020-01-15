@@ -138,7 +138,7 @@ Others       583
 Name: region, dtype: int64
 ```
 
-### 5. Grouping the Education
+### 5. Grouping the "Education Entries" into Categories
 
 There were 16 unique entries in the education column.
 ```
@@ -171,15 +171,52 @@ adt['edu_category'][adt['education'].isin(['Assoc-voc','Assoc-acdm'])]='OthrEDU'
 
 Education Category Overview
 ```
-adt['edu'].value_counts() 
+adt['edu_category'].value_counts() 
+
 Graduate    25283
 School       4829
 OthrEDU      2449
 Name: edu, dtype: int64
 ```
 
+### 6. Grouping the "Occupation" 
 
-### 6. Processing "Hours-per-week" Column
+There were 15 unique entries in the occupation column.
+```
+adt['occupation'].value_counts()
+ 
+Prof-specialty       4140
+Craft-repair         4099
+Exec-managerial      4066
+Adm-clerical         3770
+Sales                3650
+Other-service        3295
+Machine-op-inspct    2002
+?                    1843
+Transport-moving     1597
+Handlers-cleaners    1370
+Farming-fishing       994
+Tech-support          928
+Protective-serv       649
+Priv-house-serv       149
+Armed-Forces            9
+Name: occupation, dtype: int64
+```
+Grouping all the occupation into 2 categories (officeJobs, fieldJobs)
+```
+adt['jobCategory']='officeJobs'
+adt['jobCategory'][adt['occupation'].isin(['Craft-repair','Sales','Transport-moving','Handlers-cleaners','Farming-fishing'])]='fieldJobs'
+```
+Job Category Overview
+```
+adt['jobCategory'].value_counts()
+ 
+officeJobs    20851
+fieldJobs     11710
+Name: occu, dtype: int64
+```
+
+### 7. Processing "Hours-per-week" Column
 
 Checking for *Outliers* in the "Hours-per-week" Column.
 ```
@@ -210,43 +247,36 @@ plt.boxplot(adt['hrsprwk'])
 ```
 <img src="images/hrsprwk_outliers_treated.png?raw=true"/>
 
+### 8. Getting Dummies from the newly created column for "Logistic Regression ML Algorithm"
 
+Getting dummies for "Gender" column.
+```
+s=pd.get_dummies(adt['sex'])
+adt=pd.concat([adt,s], axis=1)
+```
+Getting dummies for "Education Category" column.
+```
+e=pd.get_dummies(adt['edu_category'])
+adt=pd.concat([adt,e],axis=1)
+```
+Getting dummies for "Gender Category" column.
+```
+o=pd.get_dummies(adt['jobCategory'])
+adt=pd.concat([adt,o],axis=1)
+```
 
+Columns list #before# getting dummies
+```
+adt.columns
 
+Index(['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital', 'occupation', 'relationship', 'race', 'sex', 'capgain', 'caploss', 'hrsprwk', 'country', 'income'], dtype='object')
+```
 
+Columns list #after# getting dummies
+```
+adt.columns
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Index(['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital', 'occupation', 'relationship', 'race', 'sex', 'capgain', 'caploss', 'hrsprwk', 'country', 'income', 'region', 'Female', 'Male', 'edu_category', 'jobCategory', 'Graduate', 'OthrEDU', 'school', 'fieldJobs', 'officeJobs'], dtype='object')
 
 
 
