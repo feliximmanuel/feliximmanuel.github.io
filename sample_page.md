@@ -1,6 +1,8 @@
 ## Adult Dataset & their Income Analysis 
 
-**Project description:** The "Adult Dataset has around 32,000 records with various information like age, education, marital-status, occupation, gender, hours per week, country and income information". From this dataset I have derived various insights and explained them below.
+**Project description:** 
+
+The "Adult Dataset has around 32,000 records with various information like age, education, marital-status, occupation, gender, hours per week, country and income information". From this dataset I have derived various insights and explained them below.
 
 ### Dataset Overview
 
@@ -16,17 +18,44 @@ adt.head()
 4   28           Private  338409  ...             40            Cuba  <=50K
 ```
 
-### 2. Assess assumptions on which statistical inference will be based
-
-```javascript
-if (isAwesome){
-  return true
-}
+### Checking for NULL values in the data
 ```
+adt.isnull().sum()
 
-### 3. Support the selection of appropriate statistical tools and techniques
+age               0
+workclass         0
+fnlwgt            0
+education         0
+education-num     0
+marital-status    0
+occupation        0
+relationship      0
+race              0
+sex               0
+capital-gain      0
+capital-loss      0
+hours-per-week    0
+native-country    0
+income            0
+```
+No Null values in this dataset.
 
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+
+### Changing the column Names
+
+Existing Column Values: 
+Index(['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital-status', 'occupation', 'relationship', 'race', 'sex',
+capital-gain', 'capital-loss', 'hours-per-week', 'native-country', 'income'],dtype='object')
+```
+adt.rename(columns={'marital-status' : 'marital'}, inplace = True)
+adt.rename(columns={'capital-gain' : 'capgain'}, inplace = True)
+adt.rename(columns={'capital-loss' : 'caploss'}, inplace = True)
+adt.rename(columns={'hours-per-week' : 'hrsprwk'}, inplace = True)
+adt.rename(columns={'native-country' : 'country'}, inplace = True)
+```
+Corrected Column Values:
+Index(['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital', 'occupation', 'relationship', 'race', 'sex', 'capgain', 'caploss', 'hrsprwk', 'country', 'income'], dtype='object')
+
 
 ### 4. Provide a basis for further data collection through surveys or experiments
 
