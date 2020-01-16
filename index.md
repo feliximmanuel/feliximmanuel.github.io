@@ -4,7 +4,7 @@
 
 ### Projects
 
-#### [1. Adult Data Set Analysis with Logistic Regression ML Algorithm](/adultdataset)
+#### [1. Adult Data Set Analysis with Logistic Regression ML Algorithm](/adultdataset.md)
 
 To analyze the adult data set, which has various parameters such as "Marital Status", "Relationship", "Occupation", "Gender", "Hours-per-week", "Country", "Income Category".
 
