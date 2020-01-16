@@ -277,6 +277,45 @@ Columns list **after** getting dummies
 adt.columns
 
 Index(['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital', 'occupation', 'relationship', 'race', 'sex', 'capgain', 'caploss', 'hrsprwk', 'country', 'income', 'region', 'Female', 'Male', 'edu_category', 'jobCategory', 'Graduate', 'OthrEDU', 'school', 'fieldJobs', 'officeJobs'], dtype='object')
+```
+### 9. Dataset Insights
 
+The below insights are about the people who earn more according to each category.
+
+**1. Income comparison according to a "Region"
+
+People who lives in the American region earns more than any other people in the world.
+
+<img src="images/Region_Wise_Income.png?raw=true"/>
+
+**2. Income comparison of an individual according to his "Family Status"
+
+The Person who is *not in a family* earns more money than any other category and in a family *Husbands* earn more than all.
+
+<img src="images/Family_Status.png.png?raw=true"/>
+
+**3. Income comparison according to an individuals "Marital Status"
+
+People who is *not married* earns more than any other marital status.
+
+<img src="images/Relationship_Status.png?raw=true"/>
+
+**4. Income comparison according to the "Job Sector"
+
+People who work in the *private sector* earns more than the people who works in the government & other areas.
+
+<img src="images/Area_of_Work.png?raw=true"/>
+
+**5. Income comparison as per "Job"
+
+People who are working in *professional office jobs* earn more than the people who work in field jobs.
+
+<img src="images/Job_Wise_Income.png?raw=true"/>
+
+**6. Income comparison as per the "Education"
+
+Graduates earn more than the people who didn't complete graduation.
+
+<img src="images/Education_Wise_Income.png?raw=true"/>
 
 
