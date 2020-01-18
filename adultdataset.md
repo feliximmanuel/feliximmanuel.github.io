@@ -249,22 +249,41 @@ plt.boxplot(adt['hrsprwk'])
 
 ### 8. Getting Dummies from the newly created column for "Logistic Regression ML Algorithm"
 
-Getting dummies for "Gender" column.
+Getting dummies for "Region".
+```
+r=pd.get_dummies(adt['region'])
+adt=pd.concat([adt,r], axis=1)
+```
+Getting dummies for "Gender".
 ```
 s=pd.get_dummies(adt['sex'])
 adt=pd.concat([adt,s], axis=1)
 ```
-Getting dummies for "Education Category" column.
+Getting dummies for "Education Category".
 ```
 e=pd.get_dummies(adt['edu_category'])
 adt=pd.concat([adt,e],axis=1)
 ```
-Getting dummies for "Gender Category" column.
+Getting dummies for "Gender Category".
 ```
 o=pd.get_dummies(adt['jobCategory'])
 adt=pd.concat([adt,o],axis=1)
 ```
-
+Getting dummies for "Workclass".
+```
+wk=pd.get_dummies(adt['workclass'])
+adt=pd.concat([adt,wk],axis=1)
+```
+Getting dummies for "Marital Status".
+```
+ma=pd.get_dummies(adt['marital'])
+adt=pd.concat([adt,ma],axis=1)
+```
+Getting dummies for "Family Relationship Status".
+```
+re=pd.get_dummies(adt['relationship'])
+adt=pd.concat([adt,re],axis=1)
+```
 Columns list **before** getting dummies
 ```
 adt.columns
@@ -275,8 +294,8 @@ Index(['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital', 'o
 Columns list **after** getting dummies
 ```
 adt.columns
-
-Index(['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital', 'occupation', 'relationship', 'race', 'sex', 'capgain', 'caploss', 'hrsprwk', 'country', 'income', 'region', 'Female', 'Male', 'edu_category', 'jobCategory', 'Graduate', 'OthrEDU', 'school', 'fieldJobs', 'officeJobs'], dtype='object')
+Index(['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital', 'occupation', 'relationship', 'race', 'sex', 'capgain', 'caploss', 'hrsprwk', 'country', 'income', 'region', 'Female', 'Male', 'edu', 'occu', 'Graduate', 'OthrEDU', 'school', 'fieldJobs', 'officeJobs', 'America', 'Europe', 'Others', 'asia', 'Federal-gov', 'Local-gov', 'Never-worked', 'Private', 'Self-emp-inc', 'Self-emp-not-inc', 'State-gov', 'Without-pay', 'Divorced', 'Married-AF-spouse', 'Married-civ-spouse', 'Married-spouse-absent', 'Never-married',
+'Separated', 'Widowed', 'Husband', 'Not-in-family', 'Other-relative', 'Own-child', 'Unmarried', 'Wife'], dtype='object')
 ```
 ### 9. Dataset Insights
 
@@ -317,5 +336,51 @@ People who are working in *professional office jobs* earn more than the people w
 Graduates earn more than the people who didn't complete graduation.
 
 <img src="images/Education_Wise_Income.png?raw=true"/>
+
+### 10. Building Model *(Random Forest  ML Algorithm)*
+
+**1. Importing the dataset.
+```
+X = adt[['Female','America','Europe','asia','Federal-gov', 'Local-gov', 'Never-worked', 'Private', 'Self-emp-inc', 'Self-emp-not-inc', 'State-gov', 'Divorced', 'Married-AF-spouse', 'Married-civ-spouse', 'Married-spouse-absent', 'Never-married', 'Separated','Husband', 'Not-in-family', 'Other-relative', 'Own-child', 'Unmarried']]
+```
+```
+y = adt[['income']]
+```
+**2. Splitting the dataset into the Training set and Test set.
+```
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
+```
+**3. Fitting Random Forest to the Training set.
+```
+from sklearn.ensemble import RandomForestClassifier
+classifier=RandomForestClassifier()
+classifier.fit(X_train,y_train)
+```
+**4. Predicting the Test set results
+```
+y_pred = classifier.predict(X_test)
+```
+**5. Prediction Accuracy
+```
+print("The train accuracy " , classifier.score(X_train,y_train)*100)
+print("The test accuracy " , classifier.score(X_test,y_test)*100)
+```
+The train accuracy 98.29
+The test accuracy 81.88
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
