@@ -339,35 +339,35 @@ Graduates earn more than the people who didn't complete graduation.
 
 ### 10. Building Model *(Random Forest  ML Algorithm)*
 
-**1. Importing the dataset.
+**1. Importing the dataset**
 ```
 X = adt[['Female','America','Europe','asia','Federal-gov', 'Local-gov', 'Never-worked', 'Private', 'Self-emp-inc', 'Self-emp-not-inc', 'State-gov', 'Divorced', 'Married-AF-spouse', 'Married-civ-spouse', 'Married-spouse-absent', 'Never-married', 'Separated','Husband', 'Not-in-family', 'Other-relative', 'Own-child', 'Unmarried']]
 ```
 ```
 y = adt[['income']]
 ```
-**2. Splitting the dataset into the Training set and Test set.
+**2. Splitting the dataset into the Training set and Test set**
 ```
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
 ```
-**3. Fitting Random Forest to the Training set.
+**3. Fitting Random Forest to the Training set**
 ```
 from sklearn.ensemble import RandomForestClassifier
 classifier=RandomForestClassifier()
 classifier.fit(X_train,y_train)
 ```
-**4. Predicting the Test set results
+**4. Predicting the Test set results**
 ```
 y_pred = classifier.predict(X_test)
 ```
-**5. Prediction Accuracy
+**5. Prediction Accuracy**
 ```
 print("The train accuracy " , classifier.score(X_train,y_train)*100)
 print("The test accuracy " , classifier.score(X_test,y_test)*100)
 ```
-The train accuracy 98.29
-The test accuracy 81.88
+The train accuracy **98.29**
+The test accuracy **81.88**
 
 
 
