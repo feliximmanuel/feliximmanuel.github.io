@@ -366,7 +366,7 @@ y_pred = classifier.predict(X_test)
 print("The train accuracy " , classifier.score(X_train,y_train)*100)
 print("The test accuracy " , classifier.score(X_test,y_test)*100)
 ```
-The train accuracy **98.29**
+The train accuracy **98.29**<br>
 The test accuracy **81.88**
 
 
