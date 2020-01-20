@@ -81,6 +81,7 @@ dtype: int64
 ### 3. *Cabin* Columns Analysis
 
 Changing the values in the cabin column to an understandable format. Getting the first letter of the values and saving it in a new column.
+
 ```
 tit['Cabin'].value_counts()
 
