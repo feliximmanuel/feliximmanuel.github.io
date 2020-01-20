@@ -55,7 +55,7 @@ Filtering the NULL Values - tit[tit['Embarked'].isnull()]
 61            62         1       1  ...  80.0   B28       NaN
 829          830         1       1  ...  80.0   B28       NaN
 
-tit['Embarked'].fillna('C',inplace=True)
+(Port of Embarkation) tit['Embarked'].fillna('C',inplace=True) 
 ```
 Replacing the NULL values in the "Cabin" column with **OT (Others)**
 
@@ -130,6 +130,13 @@ UnReserved    687
 Reserved      204
 Name: cabstatus, dtype: int64
 ```
+
+4. Combining (Siblings, Spouses) & (Parents, Children) Travelled into a single column.
+
+```
+tit['SC']=tit['SibSp']+tit['Parch']
+```
+
 
 
 
