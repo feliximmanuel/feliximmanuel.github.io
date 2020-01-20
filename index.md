@@ -11,7 +11,7 @@ To analyze the adult data set, which has various parameters such as "Marital Sta
 <img src="images/adt1.png?raw=true"/>
 
 ---
-#### [2. Titanic Kaagle Data Analysis]()
+#### [2. Titanic Kaagle Data Analysis](/titanic-kaagle.md)
 
 <img src="images/titanic_cover.jpeg?raw=true"/>
 
