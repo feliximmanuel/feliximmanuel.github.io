@@ -342,8 +342,7 @@ Graduates earn more than the people who didn't complete graduation.
 **1. Importing the dataset**
 ```
 X = adt[['Female','America','Europe','asia','Federal-gov', 'Local-gov', 'Never-worked', 'Private', 'Self-emp-inc', 'Self-emp-not-inc', 'State-gov', 'Divorced', 'Married-AF-spouse', 'Married-civ-spouse', 'Married-spouse-absent', 'Never-married', 'Separated','Husband', 'Not-in-family', 'Other-relative', 'Own-child', 'Unmarried']]
-```
-```
+
 y = adt[['income']]
 ```
 **2. Splitting the dataset into the Training set and Test set**
