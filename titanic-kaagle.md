@@ -41,12 +41,12 @@ dtype: int64
 ```
 Treating the NULL Values.
 
-1. Replacing the NULL values in the "Age" column with the **average age** of people in the ship
+Replacing the NULL values in the "Age" column with the **average age** of people in the ship
 
 ```
 tit['Age']=tit['Age'].fillna(tit.Age.mean())
 ```
-2. Replacing the NULL values in the "Embarked" column with the value **C**.
+Replacing the NULL values in the "Embarked" column with the value **C**.
 
 ```
 Filtering the NULL Values - tit[tit['Embarked'].isnull()]
@@ -57,7 +57,7 @@ Filtering the NULL Values - tit[tit['Embarked'].isnull()]
 
 tit['Embarked'].fillna('C',inplace=True)
 ```
-3. Replacing the NULL values in the "Cabin" column with **OT (Others)**
+Replacing the NULL values in the "Cabin" column with **OT (Others)**
 
 ```
 tit['Cabin'].fillna('OT',inplace=True)
