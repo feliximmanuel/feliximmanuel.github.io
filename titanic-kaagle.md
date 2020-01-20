@@ -1,4 +1,4 @@
-## Titanic: Machine Learning Competition
+## Kaagle.com - Titanic: Machine Learning Competition
 
 **Project description:** 
 
