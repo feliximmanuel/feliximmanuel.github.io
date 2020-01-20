@@ -46,6 +46,7 @@ Treating the NULL Values.
 tit['Age']=tit['Age'].fillna(tit.Age.mean())
 ```
 2. Replacing the NULL values in the "Embarked" column with the value **C**.
+
 ```
 Filtering the NULL Values - tit[tit['Embarked'].isnull()]
 
