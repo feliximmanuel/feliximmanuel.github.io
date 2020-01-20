@@ -297,7 +297,7 @@ output.to_csv("E:\Data Science\Data\TitanicResult.csv", index=False)
 
 After trying various algorithms, my wasn't improved.
 
-<img src="images/Other_Algorithms.png?raw=true"/>
+<img src="images/Othr_Algorithms.png?raw=true"/>
 
 
 ### Atlast I Tried Random Forest Algorithm
