@@ -240,7 +240,7 @@ Getting dummies for "Children"
 ch=pd.get_dummies(tit['children'])
 tit=pd.concat([tit,ch],axis=1)
 ```
-### I repeated the same process for the "Test Data Set" and determined the X & Y Values. Now everything was ready to run the Machine Learning Algorithms and check my score in Kaagle for which I was exicted. 
+### I repeated the same Exploratory Data Analysis for the "Test Data Set" and determined the X & Y Values. Now everything was ready to run the Machine Learning Algorithms and check my score in Kaagle for which I was exicted. 
 
 ### Imported the Data Set.
 
