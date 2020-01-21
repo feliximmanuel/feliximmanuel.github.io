@@ -13,9 +13,9 @@ To analyze the adult data set, which has various parameters such as "Marital Sta
 ---
 #### [2. Titanic Kaagle Data Analysis](/titanic-kaagle.md)
 
+This is the legendary Titanic ML competition by "Kaagle.com"– the best, first challenge for us to dive into ML competitions and familiarize ourself with how the Kaggle platform works.
+
 <img src="images/titanic_cover.jpeg?raw=true"/>
 
 ---
-#### [3. Sentiment Analysis & Text Classification using NLTK]()
 
-<img src="images/word_Cloud1.jpg?raw=true"/>
