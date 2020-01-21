@@ -17,5 +17,3 @@ This is the legendary Titanic ML competition by "Kaagle.com"– the best, first 
 
 <img src="images/titanic_cover.jpeg?raw=true"/>
 
----
-
