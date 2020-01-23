@@ -11,7 +11,7 @@ To analyze the adult data set, which has various parameters such as "Marital Sta
 <img src="images/adt1.png?raw=true"/>
 
 ---
-#### [2. Titanic Kaagle Data Analysis](/titanic-kaagle.md)
+#### [2. Kaagle.com - Titanic: Machine Learning from Disaster Competition](/titanic-kaagle.md)
 
 This is the legendary Titanic ML competition by "Kaagle.com"– the best, first challenge for us to dive into ML competitions and familiarize ourself with how the Kaggle platform works.
 
