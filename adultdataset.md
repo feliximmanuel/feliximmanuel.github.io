@@ -247,7 +247,7 @@ plt.boxplot(adt['hrsprwk'])
 ```
 <img src="images/hrsprwk_outliers_treated.png?raw=true"/>
 
-### 8. Getting Dummies from the newly created column for "Logistic Regression ML Algorithm"
+### 8. Getting Dummies from the newly created column for "Random Forest ML Algorithm"
 
 Getting dummies for "Region".
 ```
